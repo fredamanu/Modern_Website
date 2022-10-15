@@ -1,10 +1,15 @@
 import React from 'react'
 
+import { motion } from 'framer-motion'
 import { stats } from '../constants'
 import styles from '../styles'
 
 const Stats = () => (
- <section className={`${styles.flexCenter} flex-row flex-wrap sm:mb-20 mb-6`}>
+ <motion.section
+  whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+  transition={{ duration: 0.5 }}
+  className={`${styles.flexCenter} flex-row flex-wrap sm:mb-20 mb-6`}
+ >
   {stats.map((stat, index) => (
    <div
     key={stat.id}
@@ -18,7 +23,7 @@ const Stats = () => (
     </p>
    </div>
   ))}
- </section>
+ </motion.section>
 )
 
 export default Stats

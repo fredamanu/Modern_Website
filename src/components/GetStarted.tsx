@@ -1,10 +1,14 @@
 import React from 'react'
 
 import { arrowUp } from '../assets'
+import { motion } from 'framer-motion'
 import styles from '../styles'
 
 const GetStarted = () => (
- <div
+ <motion.div
+  whileInView={{ x: [100, 0], opacity: [0, 1] }}
+  whileHover={{ scale: [1, 1.1] }}
+  transition={{ duration: 0.5 }}
   className={`${styles.flexCenter} w-[140px] h-[140px] rounded-full bg-blue-gradient p-[2px] cursor-pointer`}
  >
   <div
@@ -24,7 +28,7 @@ const GetStarted = () => (
     <span className="text-gradient">Started</span>
    </p>
   </div>
- </div>
+ </motion.div>
 )
 
 export default GetStarted
